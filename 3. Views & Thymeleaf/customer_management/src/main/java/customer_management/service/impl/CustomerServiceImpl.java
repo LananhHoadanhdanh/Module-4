@@ -11,10 +11,14 @@ public class CustomerServiceImpl implements CustomerService {
 
     public CustomerServiceImpl() {
         customers = new ArrayList<>();
-        customers.add(new Customer(1, "Anh", "anh@gmail.com", "HN"));
-        customers.add(new Customer(2, "Long","long@gmail.com", "PT"));
-        customers.add(new Customer(3, "Duy","duy@gmail.com", "HP"));
-        customers.add(new Customer(4, "Khanh","khanh@gmail.com", "DN"));
+        customers.add(new Customer("Anh", "anh@gmail.com", "HN"));
+        Customer.count++;
+        customers.add(new Customer("Long","long@gmail.com", "PT"));
+        Customer.count++;
+        customers.add(new Customer("Duy","duy@gmail.com", "HP"));
+        Customer.count++;
+        customers.add(new Customer("Khanh","khanh@gmail.com", "DN"));
+        Customer.count++;
     }
 
     @Override
@@ -35,6 +39,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void save(Customer customer) {
         customers.add(customer);
+        Customer.count++;
     }
 
     @Override

@@ -5,9 +5,14 @@ public class Customer {
     private String name;
     private String email;
     private String address;
+    public static int count = 1;
 
-    public Customer(int id, String name, String email, String address) {
-        this.id = id;
+    public Customer() {
+        this.id = Customer.count;
+    }
+
+    public Customer(String name, String email, String address) {
+        this.id = Customer.count;
         this.name = name;
         this.email = email;
         this.address = address;
