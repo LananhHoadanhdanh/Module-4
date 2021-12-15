@@ -1,6 +1,7 @@
 package management.service.impl;
 
 import management.model.Customer;
+import management.model.Product;
 import management.service.CustomerService;
 
 import java.util.ArrayList;
@@ -23,6 +24,17 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<Customer> findAll() {
+        return customers;
+    }
+
+    @Override
+    public List<Customer> findByName(String key) {
+        List<Customer> customers = new ArrayList<>();
+        for (int i = 0; i < this.customers.size(); i++) {
+            if (this.customers.get(i).getName().contains(key)) {
+                customers.add(this.customers.get(i));
+            }
+        }
         return customers;
     }
 

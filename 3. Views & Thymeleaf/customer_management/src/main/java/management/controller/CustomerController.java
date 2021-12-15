@@ -1,14 +1,12 @@
 package management.controller;
 
 import management.model.Customer;
+import management.model.Product;
 import management.service.CustomerService;
 import management.service.impl.CustomerServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -20,8 +18,11 @@ public class CustomerController {
     CustomerService customerService = new CustomerServiceImpl();
 
     @GetMapping("")
-    public String showList(Model model) {
-        List<Customer> customers = customerService.findAll();
+    public String showList(@RequestParam String key, Model model) {
+        List<Customer> customers = customerService.findByName(key);
+        if (customers.size() == 0) {
+            customers = customerService.findAll();
+        }
         model.addAttribute("customers", customers);
         return "customer/index";
     }
