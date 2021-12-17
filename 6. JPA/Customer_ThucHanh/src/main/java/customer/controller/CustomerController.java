@@ -24,7 +24,8 @@ public class CustomerController {
 
     @PostMapping("/create-customer")
     public String saveCustomer(Model model, Customer customer){
-        customerService.save(customer);
+//        customerService.save(customer);
+        customerService.insertWithStoredProcedure(customer);
         model.addAttribute("customer", new Customer());
         model.addAttribute("message", "New customer created successfully");
         return "/create";
