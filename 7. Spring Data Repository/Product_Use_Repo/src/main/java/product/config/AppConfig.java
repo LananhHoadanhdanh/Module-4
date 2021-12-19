@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -22,6 +23,11 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+import product.formatter.CategoryFormatter;
+import product.service.ICategoryService;
+import product.service.IProductService;
+import product.service.impl.CategoryService;
+import product.service.impl.ProductService;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -32,7 +38,8 @@ import java.util.Properties;
 @EnableWebMvc // đánh dấu dự án này hỗ trợ mô hình MVC
 @EnableTransactionManagement // đánh dấu dự án có hỗ trợ transaction
 @EnableJpaRepositories("product.repo") // đánh dấu dự án có sử dụng jpa repository và đường dẫn
-@ComponentScan("product")// cho Spring biết phải tìm controller ở đâu
+@ComponentScan("product.controller")// cho Spring biết phải tìm controller ở đâu
+@ComponentScan("product.formatter")// cho Spring biết phải tìm formatter ở đâu
 public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     private ApplicationContext applicationContext; // khai báo 1 Spring Container
@@ -116,9 +123,23 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
 //        registry.addFormatter(new ProvinceFormatter(applicationContext.getBean(ProvinceService.class)));
 //        registry.addConverter(new DateConverter());
 //    }
+    @Bean
+    public ICategoryService categoryService() {
+        return new CategoryService();
+    }
+
+    @Bean
+    public IProductService productServiceService() {
+        return new ProductService();
+    }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry .addResourceHandler("/**") .addResourceLocations("/assets/");
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addFormatter(new CategoryFormatter(applicationContext.getBean(CategoryService.class)));
     }
 }

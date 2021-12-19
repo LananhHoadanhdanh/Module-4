@@ -5,34 +5,42 @@
     <title>Create product</title>
 </head>
 <body>
-<h1>Create customer</h1>
+<h1>Create product</h1>
 <p>
-    <a href="/customers">Customer list</a>
+    <a href="/products/">Product list</a>
 </p>
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<form th:action="@{/create-customer}" th:object="${customer}" method="post">
-    <table>
+<form th:action="@{/products/create}" th:object="${product}" method="post">
+    <table cellpadding="5">
         <tr>
-            <td>First name:</td>
-            <td><input type="text" th:field="*{firstName}"/></td>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}"/></td>
         </tr>
         <tr>
-            <td>Last name:</td>
-            <td><input type="text" th:field="*{lastName}"/></td>
+            <td>Price:</td>
+            <td><input type="number" th:field="*{price}"/></td>
         </tr>
         <tr>
-            <td>Province:</td>
+            <td>Quantity:</td>
+            <td><input type="number" th:field="*{quantity}"/></td>
+        </tr>
+        <tr>
+            <td>Color:</td>
+            <td><input type="text" th:field="*{color}"/></td>
+        </tr>
+        <tr>
+            <td>Category:</td>
             <td>
-                <select th:field="*{province}">
-                    <option th:each="p : ${provinces}" th:value="${p.id}" th:text="${p.name}"></option>
+                <select th:field="*{category}">
+                    <option th:each="c : ${categories}" th:value="${c.id}" th:text="${c.name}"></option>
                 </select>
             </td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" value="Create customer"></td>
+            <td><input type="submit" value="Create product"></td>
         </tr>
     </table>
 </form>
