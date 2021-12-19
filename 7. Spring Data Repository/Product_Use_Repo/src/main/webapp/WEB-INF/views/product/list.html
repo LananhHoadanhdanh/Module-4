@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Product</title>
+<head th:replace="/layout :: head"></head>
 </head>
 <body>
-<a href="/products/create">Create new product</a>
-<h1>Product</h1>
+<p><a href="/products/create">Create new product</a></p>
+<h2>Product</h2>
+<form action="/product/" id="form">
+    <input type="text" name="key">
+    <input type="submit" value="Search by name">
+</form>
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<table border="1" cellpadding="5">
+<table border="1" cellpadding="5" id = "products">
     <tr>
         <th>Name</th>
         <th>Price</th>
@@ -33,5 +35,6 @@
         </tr>
     </th:block>
 </table>
+<footer th:replace="/layout :: footer"></footer>
 </body>
 </html>

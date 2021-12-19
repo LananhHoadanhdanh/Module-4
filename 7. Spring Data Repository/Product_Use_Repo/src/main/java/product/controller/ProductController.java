@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import product.model.Category;
 import product.model.Product;
 import product.service.ICategoryService;
@@ -39,10 +40,10 @@ public class ProductController {
     }
 
     @PostMapping("/create")
-    public String createProduct(Product product, Model model) {
+    public String createProduct(Product product, RedirectAttributes redirect) {
         productService.save(product);
 //        model.addAttribute("product", new Product());
-        model.addAttribute("message", "New customer created successfully");
+        redirect.addFlashAttribute("message", "New customer created successfully");
         return "redirect:/products";
     }
 
@@ -59,17 +60,18 @@ public class ProductController {
     }
 
     @PostMapping("/edit")
-    public String editProduct(Product product){
+    public String editProduct(Product product, RedirectAttributes redirect){
         productService.save(product);
+        redirect.addFlashAttribute("message", "Edited product successfully");
         return "redirect:/products";
     }
 
     @GetMapping("/delete/{id}")
-    public String showDeleteForm(Model model, @PathVariable long id) {
+    public String showDeleteForm(RedirectAttributes redirect, @PathVariable long id) {
         Optional<Product> product = productService.findById(id);
         if (product.isPresent()) {
             productService.remove(id);
-            model.addAttribute("message", "New customer deleted successfully");
+            redirect.addFlashAttribute("message", "Deleted product successfully");
             return "redirect:/products";
         }
         return "product/404.error";
