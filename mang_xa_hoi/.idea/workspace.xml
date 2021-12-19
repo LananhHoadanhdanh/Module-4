@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3ce21ef5-8a43-4547-a929-de91172ab31d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.1/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/tmp/war/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2. Spring controller/Spring-Servlet/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2. Spring controller/Spring-Servlet/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../2. Spring controller/sandwich_contiments/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../2. Spring controller/sandwich_contiments/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/7.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/.idea/webContexts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/configuration/AppConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/configuration/AppInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/controller/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/model/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/service/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/service/GeneralService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/service/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/service/impl/CustomerServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/classes/java/main/management/service/impl/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/libs/customer_management-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/configuration/AppConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/configuration/AppInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/service/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/service/GeneralService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/service/impl/CustomerServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/java/management/service/impl/ProductServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/customer/create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/customer/delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/customer/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/customer/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/customer/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/customer/view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/product/create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/product/delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/product/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/product/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/product/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3. Views &amp; Thymeleaf/customer_management/src/main/webapp/WEB-INF/views/product/view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/Customer_ThucHanh/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/Customer_ThucHanh/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/Customer_ThucHanh/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/Customer_ThucHanh/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/Customer_ThucHanh/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/Customer_ThucHanh/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/Customer_ThucHanh/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/Customer_ThucHanh/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/Customer_ThucHanh/src/main/webapp/WEB-INF/views/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/Customer_ThucHanh/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/src/main/java/blog/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/src/main/java/blog/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/src/main/java/blog/config/AppInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/src/main/java/blog/config/AppInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/src/main/java/blog/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/src/main/java/blog/model/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6. JPA/blog_management/src/main/java/blog/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/../6. JPA/blog_management/src/main/java/blog/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../7. Spring Data Repository/Product_Use_Repo/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../7. Spring Data Repository/Product_Use_Repo/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/build.gradle" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="22Vhq058Pf9rObcwpg6hHktPz0l" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Rei\Code Gym\Luyen tap\Module 4\mang_xa_hoi" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ce21ef5-8a43-4547-a929-de91172ab31d" name="Changes" comment="" />
+      <created>1639928851138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639928851138</updated>
+      <workItem from="1639928852670" duration="424000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
