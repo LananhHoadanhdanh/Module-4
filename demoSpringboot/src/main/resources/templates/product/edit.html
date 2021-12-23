@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+<body>
+<h2>Edit product</h2>
+<p>
+    <a href="/products/">Product list</a>
+</p>
+<div id="form">
+    <form th:action="@{/products/edit}" th:object="${product}" method="post">
+        <table cellpadding="5">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{name}"/></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><input type="number" th:field="*{price}"/></td>
+            </tr>
+            <tr>
+                <td>Quantity:</td>
+                <td><input type="number" th:field="*{quantity}"/></td>
+            </tr>
+            <tr>
+                <td>Color:</td>
+                <td><input type="text" th:field="*{color}"/></td>
+            </tr>
+            <tr>
+                <td>Category:</td>
+                <td>
+                    <select th:field="*{category}">
+                        <option th:each="c : ${categories}" th:value="${c.getId()}" th:text="${c.getName()}"
+                                th:selected="(${product.category}) and (${c.id} == *{category.id})"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Edit product"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+</head>
+<body>
+<p><a href="/products/create">Create new product</a></p>
+<h2>Product</h2>
+<form action="/product/" id="form">
+    <input type="text" name="key">
+    <input type="submit" value="Search by name">
+</form>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<table border="1" cellpadding="5" id = "products">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Color</th>
+        <th>Category</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="product : ${products}">
+        <tr>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.quantity}"></td>
+            <td th:text="${product.color}"></td>
+            <td th:if="${product.category}" th:text="${product.category.name}"></td>
+            <td th:unless="${product.category}"></td>
+            <td><a th:href="@{/products/edit/__${product.id}__ }">Edit</a></td>
+            <td><a th:href="@{/products/delete/__${product.id}__ }" onclick="return confirm('Are you sure?')">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
