@@ -1,15 +1,14 @@
-package com.example.shopping_cart.service.impl;
+package com.example.shopping_cart.service.product;
 
 import com.example.shopping_cart.model.Product;
-import com.example.shopping_cart.repo.IProductRepository;
-import com.example.shopping_cart.service.IProductService;
+import com.example.shopping_cart.repository.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class ProductService implements IProductService {
+public class ProductService implements IProductService{
     @Autowired
     private IProductRepository productRepository;
 

@@ -2,7 +2,7 @@ package com.example.shopping_cart.controller;
 
 import com.example.shopping_cart.model.Cart;
 import com.example.shopping_cart.model.Product;
-import com.example.shopping_cart.service.IProductService;
+import com.example.shopping_cart.service.product.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -40,5 +40,23 @@ public class ProductController {
         }
         cart.addProduct(productOptional.get());
         return "redirect:/shop";
+    }
+
+    @GetMapping("/minus/{id}")
+    public String minusProduct(@PathVariable Long id, @ModelAttribute Cart cart) {
+        Optional<Product> productOptional = productService.findById(id);
+        if (!productOptional.isPresent()) {
+            return "/error.404";
+        } else {
+            cart.minusProduct(productOptional.get());
+            return "redirect:/shopping-cart";
+        }
+    }
+
+    @GetMapping("/remove/{id}")
+    public String removeProduct(@PathVariable Long id, @ModelAttribute Cart cart) {
+        Optional<Product> productOptional = productService.findById(id);
+        cart.deleteProductFromCart(productOptional.get());
+        return "redirect:/shopping-cart";
     }
 }
