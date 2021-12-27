@@ -1,7 +1,6 @@
-package product.model;
+package com.example.demospringboot.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "category")

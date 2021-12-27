@@ -1,6 +1,7 @@
-package product.service;
+package com.example.demospringboot.service;
 
-import product.model.Category;
+
+import com.example.demospringboot.model.Category;
 
 public interface ICategoryService extends IGeneralService<Category>{
 }

@@ -1,18 +1,19 @@
-package product.controller;
+package com.example.demospringboot.controller;
 
+import com.example.demospringboot.model.Category;
+import com.example.demospringboot.model.Product;
+import com.example.demospringboot.service.ICategoryService;
+import com.example.demospringboot.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import product.model.Category;
-import product.model.Product;
-import product.service.ICategoryService;
-import product.service.IProductService;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.io.File;
+import java.io.IOException;
 import java.util.Optional;
 
 @Controller
@@ -28,7 +29,7 @@ public class ProductController {
     public String showList(Model model) {
         Iterable<Product> products = productService.findAll();
         model.addAttribute("products", products);
-        return "product/list";
+        return "/product/list";
     }
 
     @GetMapping("/create")
@@ -36,14 +37,21 @@ public class ProductController {
         model.addAttribute("product", new Product());
         Iterable<Category> categories = categoryService.findAll();
         model.addAttribute("categories", categories);
-        return "product/create";
+        return "/product/create";
     }
 
     @PostMapping("/create")
-    public String createProduct(Product product, RedirectAttributes redirect) {
+    public String createProduct(Product product, RedirectAttributes redirect, @RequestParam MultipartFile img1) {
+        String fileName = img1.getOriginalFilename();
+        try {
+            FileCopyUtils.copy(img1.getBytes(),
+                    new File("F:\\Rei\\Code Gym\\Luyen tap\\Module 4\\demoSpringBoot\\src\\main\\resources\\static\\images\\" + fileName)); // coppy ảnh từ ảnh nhận được vào thư mục quy định,
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        product.setImg(fileName);
         productService.save(product);
-//        model.addAttribute("product", new Product());
-        redirect.addFlashAttribute("message", "New customer created successfully");
+        redirect.addFlashAttribute("message", "New product created successfully");
         return "redirect:/products";
     }
 
@@ -54,13 +62,21 @@ public class ProductController {
             model.addAttribute("product", product.get());
             Iterable<Category> categories = categoryService.findAll();
             model.addAttribute("categories", categories);
-            return "product/edit";
+            return "/product/edit";
         }
-        return "product/404.error";
+        return "/product/404.error";
     }
 
     @PostMapping("/edit")
-    public String editProduct(Product product, RedirectAttributes redirect){
+    public String editProduct(Product product, RedirectAttributes redirect, @RequestParam MultipartFile img1){
+        String fileName = img1.getOriginalFilename();
+        try {
+            FileCopyUtils.copy(img1.getBytes(),
+                    new File("F:\\Rei\\Code Gym\\Luyen tap\\Module 4\\demoSpringBoot\\src\\main\\resources\\static\\images\\" + fileName)); // coppy ảnh từ ảnh nhận được vào thư mục quy định,
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        product.setImg(fileName);
         productService.save(product);
         redirect.addFlashAttribute("message", "Edited product successfully");
         return "redirect:/products";
@@ -74,7 +90,7 @@ public class ProductController {
             redirect.addFlashAttribute("message", "Deleted product successfully");
             return "redirect:/products";
         }
-        return "product/404.error";
+        return "/product/404.error";
     }
 }
 

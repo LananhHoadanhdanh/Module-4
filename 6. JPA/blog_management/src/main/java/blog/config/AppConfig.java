@@ -1,9 +1,5 @@
-package customer.config;
+package blog.config;
 
-import customer.repo.ICustomerRepository;
-import customer.repo.impl.CustomerRepository;
-import customer.service.ICustomerService;
-import customer.service.impl.CustomerService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -33,7 +29,7 @@ import java.util.Properties;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
-@ComponentScan("customer.controller")
+@ComponentScan("blog.controller")
 public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     private ApplicationContext applicationContext;
@@ -81,7 +77,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("customer.model");
+        em.setPackagesToScan("blog.model");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -93,7 +89,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/customer_1712");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/blog");
         dataSource.setUsername("root");
         dataSource.setPassword("123456");
         return dataSource;
@@ -113,15 +109,15 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         return properties;
     }
 
-    @Bean
-    public ICustomerRepository customerRepository() {
-        return new CustomerRepository();
-    }
-
-    @Bean
-    public ICustomerService customerService() {
-        return new CustomerService();
-    }
+//    @Bean
+//    public ICustomerRepository customerRepository() {
+//        return new CustomerRepository();
+//    }
+//
+//    @Bean
+//    public ICustomerService customerService() {
+//        return new CustomerService();
+//    }
 
 
 }

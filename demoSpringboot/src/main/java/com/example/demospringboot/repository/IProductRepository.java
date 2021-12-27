@@ -1,4 +1,4 @@
-package com.example.demospringboot.repo;
+package com.example.demospringboot.repository;
 
 import com.example.demospringboot.model.Category;
 import com.example.demospringboot.model.Product;
@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IProductRepository extends JpaRepository<Product, Long> {
-    Iterable<Product> findAllByCategory(Category category);
+    Iterable<Product> findAllByCategoryId(Long id);
     Iterable<Product> findAllByName(String key);
 }

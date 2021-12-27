@@ -1,11 +1,10 @@
 package blog.model;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "blogs")
-public class Category {
+@Table(name = "blog")
+public class Blog {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
@@ -13,10 +12,10 @@ public class Category {
     private String content;
     private long categoryId;
 
-    public Category() {
+    public Blog() {
     }
 
-    public Category(String title, String content, long categoryId) {
+    public Blog(String title, String content, long categoryId) {
         this.title = title;
         this.content = content;
         this.categoryId = categoryId;

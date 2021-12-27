@@ -1,4 +1,4 @@
-package product.service;
+package com.example.demospringboot.service;
 
 import java.util.Optional;
 

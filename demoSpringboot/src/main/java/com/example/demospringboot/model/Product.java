@@ -1,4 +1,4 @@
-package product.model;
+package com.example.demospringboot.model;
 
 import javax.persistence.*;
 
@@ -12,19 +12,13 @@ public class Product {
     private long price;
     private int quantity;
     private String color;
+    private String img;
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
     private Category category;
 
     public Product() {
-    }
-
-    public Product(String name, long price, int quantity, String color) {
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-        this.color = color;
     }
 
     public Product(String name, long price, int quantity, String color, Category category) {
@@ -35,12 +29,12 @@ public class Product {
         this.category = category;
     }
 
-    public Product(Long id, String name, long price, int quantity, String color, Category category) {
-        this.id = id;
+    public Product(String name, long price, int quantity, String color, String img, Category category) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.color = color;
+        this.img = img;
         this.category = category;
     }
 
@@ -82,6 +76,14 @@ public class Product {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public Category getCategory() {

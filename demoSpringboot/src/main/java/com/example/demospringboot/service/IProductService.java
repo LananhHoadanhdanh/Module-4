@@ -1,9 +1,10 @@
-package product.service;
+package com.example.demospringboot.service;
 
-import product.model.Category;
-import product.model.Product;
+
+import com.example.demospringboot.model.Category;
+import com.example.demospringboot.model.Product;
 
 public interface IProductService extends IGeneralService<Product>{
-    Iterable<Product> findAllByCategory(Category category);
+    Iterable<Product> findAllByCategoryId(Long id);
     Iterable<Product> findAllByName(String key);
 }

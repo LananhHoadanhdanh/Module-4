@@ -1,10 +1,10 @@
-package product.service.impl;
+package com.example.demospringboot.service.impl;
 
+import com.example.demospringboot.model.Category;
+import com.example.demospringboot.repository.ICategoryRepository;
+import com.example.demospringboot.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import product.model.Category;
-import product.repo.ICategoryRepository;
-import product.service.ICategoryService;
 
 import java.util.Optional;
 
