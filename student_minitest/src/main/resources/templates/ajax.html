@@ -128,20 +128,15 @@
                     document.getElementById("result").innerHTML = form;
                 }
             })
-
         }
 
         function saveStudent() {
-            let name = document.getElementById("studentName").value;
-            let score = document.getElementById("studentScore").value;
-            let age = document.getElementById("studentAge").value;
-            let clazz = document.getElementById("studentClass").value;
             let student = {
-                "name": name,
-                "score": score,
-                "age": age,
+                "name": document.getElementById("studentName").value,
+                "score": document.getElementById("studentScore").value,
+                "age": document.getElementById("studentAge").value,
                 "classRoom": {
-                    "id": clazz,
+                    "id": document.getElementById("studentClass").value,
                 }
             }
             console.log(student);
@@ -209,17 +204,13 @@
         }
 
         function updateStudent(id) {
-            let name = document.getElementById("editName").value;
-            let score = document.getElementById("editScore").value;
-            let age = document.getElementById("editAge").value;
-            let clazz = document.getElementById("editClass").value;
             let student = {
                 "id": id,
-                "name": name,
-                "score": score,
-                "age": age,
+                "name": document.getElementById("editName").value,
+                "score": document.getElementById("editScore").value,
+                "age": document.getElementById("editAge").value,
                 "classRoom": {
-                    "id": clazz,
+                    "id": document.getElementById("editClass").value,
                 }
             }
             console.log(student);
