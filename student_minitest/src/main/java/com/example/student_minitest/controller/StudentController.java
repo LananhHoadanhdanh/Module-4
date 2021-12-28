@@ -13,7 +13,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/students")
+@CrossOrigin("*")
+@RequestMapping("/api/students")
 public class StudentController {
     @Autowired
     private IStudentService studentService;
@@ -23,6 +24,22 @@ public class StudentController {
     @GetMapping("")
     public ResponseEntity<Iterable<Student>> findAllStudent() {
         List<Student> students = (List<Student>) studentService.findAll();
+        if (students.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } return new ResponseEntity<>(students, HttpStatus.OK);
+    }
+
+    @GetMapping("/orderByAge")
+    public ResponseEntity<Iterable<Student>> findAllStudentOderByAge() {
+        List<Student> students = (List<Student>) studentService.findAllOrderByAge();
+        if (students.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } return new ResponseEntity<>(students, HttpStatus.OK);
+    }
+
+    @GetMapping("/findByName")
+    public ResponseEntity<Iterable<Student>> findAllStudentByName(@RequestParam String key) {
+        List<Student> students = (List<Student>) studentService.findAllByNameContaining(key);
         if (students.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } return new ResponseEntity<>(students, HttpStatus.OK);
