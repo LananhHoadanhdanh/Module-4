@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function getAllCategory() {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/categories",
+                success: function (categories) {
+                    console.log(categories);
+                    displayCategory(categories)
+                }
+            })
+        }
+
+        function displayCategory(array) {
+            let res = "";
+            res += `<table border="1" cellPadding="5">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>`;
+            for (let i = 0; i < array.length; i++) {
+                res += `<tr>
+                            <td>${array[i].name}</td>
+                            <td>${array[i].description}</td>
+                        </tr>`
+            }
+            res += "</table>"
+            document.getElementById("result").innerHTML = res
+        }
+
+        function formCreateCategory() {
+            let form = `<table cellpadding="5">
+                            <tr>
+                                <th>Name: </th>
+                                <td><input type="text" id="name"></td>
+                            </tr>
+                            <tr>
+                                <th>Description: </th>
+                                <td><input type="text" id="description"></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td><button onclick="saveCategory()">Save</button></td>
+                            </tr>
+                        </table>`
+            document.getElementById("result").innerHTML = form;
+        }
+
+        function saveCategory() {
+            let category = {
+                "name": document.getElementById("name").value,
+                "description": document.getElementById("description").value
+            }
+            console.log(category)
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                type: 'POST',
+                url: 'http://localhost:8080/categories',
+                data: JSON.stringify(category),
+                success: function () {
+                    alert("Created successfully!")
+                    displayCategory()
+                }
+            })
+        }
+
+        function getAllHouse() {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/houses",
+                success: function (houses) {
+                    console.log(houses);
+                    displayHouse(houses)
+                }
+            })
+        }
+
+        function orderHouseByName(){
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/houses/orderByName",
+                success: function (houses) {
+                    console.log(houses);
+                    displayHouse(houses)
+                }
+            })
+        }
+
+        function bathroomMoreThan2(){
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/houses/bathroomMoreThan2",
+                success: function (houses) {
+                    console.log(houses);
+                    displayHouse(houses)
+                }
+            })
+        }
+
+
+        function displayHouse(array) {
+            let res = "";
+            res += `<table border="1" cellpadding="5">
+                        <tr>
+                            <th>Name</th>
+                            <th>Bathroom</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th colspan="3">Action</th>
+                        </tr>`;
+            for (let i = 0; i < array.length; i++) {
+                res += `<tr>
+                            <td>${array[i].name}</td>
+                            <td>${array[i].bathroom}</td>
+                            <td>${array[i].category.name}</td>
+                            <td>${array[i].category.description}</td>
+                            <td><button onclick="viewHouse(${array[i].id})">View</button></td>
+                            <td><button onclick="formEditHouse(${array[i].id})">Edit</button></td>
+                            <td><button onclick="deleteHouse(${array[i].id})">Delete</button></td>
+                        </tr>`
+            }
+            res += "</table>"
+            document.getElementById("result").innerHTML = res
+        }
+
+        function formCreateHouse() {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/categories",
+                success: function (categories) {
+                    console.log(categories);
+                    let form = `<table cellpadding="5">
+                            <tr>
+                                <th>Name: </th>
+                                <td><input type="text" id="name"></td>
+                            </tr>
+                            <tr>
+                                <th>Bathroom: </th>
+                                <td><input type="number" id="bathroom"></td>
+                            </tr>
+                            <tr>
+                                <th>Class: </th>
+                                <td>
+                                    <select name="category" id="category">`
+                    for (let i = 0; i < categories.length; i++) {
+                        form += `<option value="${categories[i].id}">${categories[i].name}</option>`
+                    }
+                    form += `</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td><button onclick="saveHouse()">Save</button></td>
+                            </tr>
+                        </table>`;
+                    document.getElementById("result").innerHTML = form;
+                }
+            })
+        }
+
+        function saveHouse() {
+            let house = {
+                "name": document.getElementById("name").value,
+                "bathroom": document.getElementById("bathroom").value,
+                "category": {
+                    "id": document.getElementById("category").value
+                }
+            }
+            console.log(house)
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                type: 'POST',
+                url: 'http://localhost:8080/houses',
+                data: JSON.stringify(house),
+                success: function () {
+                    alert("Created successfully!")
+                    displayHouse()
+                }
+            })
+        }
+
+        function viewHouse(id) {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/houses/" + id,
+                success: function (house) {
+                    console.log(house)
+                    let view = `<table cellpadding="5">
+                                    <tr>
+                                        <th>Name: </th>
+                                        <td>${house.name}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Bathroom: </th>
+                                        <td>${house.bathroom}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Category: </th>
+                                        <td>${house.category.name}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Class: </th>
+                                        <td>${house.category.description}</td>
+                                    </tr>
+                                </table>`;
+                    document.getElementById("result").innerHTML = view;
+                }
+            })
+        }
+
+        function deleteHouse(id) {
+            if (confirm("Are you sure?")) {
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    type: 'DELETE',
+                    url: 'http://localhost:8080/houses/' + id,
+                    success: function (){
+                        alert("Deleted successfully!")
+                        getAllHouse()
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                })
+            }
+        }
+
+        function formEditHouse(id) {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/houses/" + id,
+                success: function (house) {
+                    console.log(house)
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8080/categories",
+                        success: function (categories) {
+                            console.log(categories);
+                            let form = `<table cellpadding="5">
+                                <input type="hidden" id="studentId" value="${house.id}">
+                            <tr>
+                                <th>Name: </th>
+                                <td><input type="text" id="name" value="${house.name}"></td>
+                            </tr>
+                            <tr>
+                                <th>Bathroom: </th>
+                                <td><input type="number" id="bathroom" value="${house.bathroom}"></td>
+                            </tr>
+                            <tr>
+                                <th>Category: </th>
+                                <td>
+                                    <select name="category" id="category">
+                                        <option value="${house.category.id}">${house.category.name}</option>`
+                            for (let i = 0; i < categories.length; i++) {
+                                form += `<option value="${categories[i].id}">${categories[i].name}</option>`
+                            }
+                            form += `</select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td><button onclick="updateHouse(${house.id})">Update</button></td>
+                            </tr>
+                        </table>`;
+                            document.getElementById("result").innerHTML = form;
+                        }
+                    })
+                }
+            })
+        }
+
+        function updateHouse(id) {
+            let house = {
+                "name": document.getElementById("name").value,
+                "bathroom": document.getElementById("bathroom").value,
+                "category": {
+                    "id": document.getElementById("category").value
+                }
+            }
+            console.log(house)
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                type: 'PUT',
+                url: 'http://localhost:8080/houses/' + id,
+                data: JSON.stringify(house),
+                success: function () {
+                    alert("Edited successfully!");
+                    getAllHouse()
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<button onclick="getAllCategory()">Show all Category</button>
+<button onclick="formCreateCategory()">Create a category</button>
+<button onclick="getAllHouse()">Show all House</button>
+<button onclick="orderHouseByName()">Order house by name</button>
+<button onclick="formCreateHouse()">Create a house</button>
+<button onclick="bathroomMoreThan2()">Bathroom more than 2</button>
+<br>
+<br>
+<button onclick="findByCategory()">Find By Category</button>
+<br>
+<br>
+<div id="result">
+</div>
+
+<p></p>
+</body>
+</html>
