@@ -112,7 +112,7 @@
                 success: function (categories) {
                     console.log(categories);
                     let form = `<p>Choose Category!</p>
-                        <select name="category" id="categoryId">`
+                        <select name="category" id="category">`
                     for (let i = 0; i < categories.length; i++) {
                         form += `<option value="${categories[i].id}">${categories[i].name}</option>`
                     }
@@ -124,10 +124,11 @@
         }
 
         function findByCategory(){
-            let idFind = document.getElementById("categoryId");
+            let idFind = document.getElementById("category");
+            console.log(idFind)
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/houses/findByCategory?id=" + idFind,
+                url: "http://localhost:8080/houses/findByCategory/" + idFind,
                 success: function (houses) {
                     console.log(houses);
                     displayHouse(houses)

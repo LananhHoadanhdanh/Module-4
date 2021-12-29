@@ -14,6 +14,6 @@ public interface HouseRepo extends JpaRepository<House, Long> {
     @Query("select h from House h where h.bathroom > 2")
     Iterable<House> findWhereBathroomMoreThan2();
 
-    @Query("select h from House h where h.category.id =: id")
+    @Query("select h from House h where h.category.id = :id")
     Iterable<House> findByCategory(@Param("id") Long id);
 }
