@@ -128,7 +128,7 @@
             console.log(idFind)
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/houses/findByCategory/" + idFind,
+                url: "http://localhost:8080/houses/findByCategory?id=" + idFind,
                 success: function (houses) {
                     console.log(houses);
                     displayHouse(houses)

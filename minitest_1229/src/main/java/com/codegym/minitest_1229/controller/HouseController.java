@@ -76,8 +76,8 @@ public class HouseController {
         } return new ResponseEntity<>(houses, HttpStatus.OK);
     }
 
-    @GetMapping("/findByCategory/{id}")
-    public ResponseEntity<Iterable<House>> findByCategory(@PathVariable Long id) {
+    @GetMapping("/findByCategory")
+    public ResponseEntity<Iterable<House>> findByCategory(@RequestParam Long id) {
         List<House> houses = (List<House>) houseService.findByCategory(id);
         if (houses.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
