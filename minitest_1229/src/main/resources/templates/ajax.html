@@ -124,7 +124,7 @@
         }
 
         function findByCategory(){
-            let idFind = document.getElementById("category");
+            let idFind = document.getElementById("category").value;
             console.log(idFind)
             $.ajax({
                 type: "GET",
