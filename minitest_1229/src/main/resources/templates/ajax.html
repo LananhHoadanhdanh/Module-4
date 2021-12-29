@@ -83,7 +83,7 @@
             })
         }
 
-        function orderHouseByName(){
+        function orderHouseByName() {
             $.ajax({
                 type: "GET",
                 url: "http://localhost:8080/houses/orderByName",
@@ -94,7 +94,7 @@
             })
         }
 
-        function bathroomMoreThan2(){
+        function bathroomMoreThan2() {
             $.ajax({
                 type: "GET",
                 url: "http://localhost:8080/houses/bathroomMoreThan2",
@@ -105,6 +105,35 @@
             })
         }
 
+        function findByCategoryForm() {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/categories",
+                success: function (categories) {
+                    console.log(categories);
+                    let form = `<p>Choose Category!</p>
+                        <select name="category" id="categoryId">`
+                    for (let i = 0; i < categories.length; i++) {
+                        form += `<option value="${categories[i].id}">${categories[i].name}</option>`
+                    }
+                    form += `</select>
+                        <button onclick="findByCategory()">Find</button>`
+                    document.getElementById("result").innerHTML = form;
+                }
+            })
+        }
+
+        function findByCategory(){
+            let idFind = document.getElementById("categoryId");
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/houses/findByCategory?id=" + idFind,
+                success: function (houses) {
+                    console.log(houses);
+                    displayHouse(houses)
+                }
+            })
+        }
 
         function displayHouse(array) {
             let res = "";
@@ -228,7 +257,7 @@
                     },
                     type: 'DELETE',
                     url: 'http://localhost:8080/houses/' + id,
-                    success: function (){
+                    success: function () {
                         alert("Deleted successfully!")
                         getAllHouse()
                     },
@@ -320,12 +349,10 @@
 <button onclick="bathroomMoreThan2()">Bathroom more than 2</button>
 <br>
 <br>
-<button onclick="findByCategory()">Find By Category</button>
+<button onclick="findByCategoryForm()">Find By Category</button>
 <br>
 <br>
 <div id="result">
 </div>
-
-<p></p>
 </body>
 </html>
