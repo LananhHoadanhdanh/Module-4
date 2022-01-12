@@ -11,16 +11,22 @@ public class City {
     private Long area;
     private Long population;
     private Long GDP;
+
+    @Column(length = 10000)
+    private String description;
+
     @ManyToOne
     private Country country;
 
     public City() {
     }
 
-    public City(Long area, Long population, Long GDP, Country country) {
+
+    public City(Long area, Long population, Long GDP, String description, Country country) {
         this.area = area;
         this.population = population;
         this.GDP = GDP;
+        this.description = description;
         this.country = country;
     }
 
@@ -62,5 +68,13 @@ public class City {
 
     public void setCountry(Country country) {
         this.country = country;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
