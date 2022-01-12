@@ -49,4 +49,14 @@ public class CityController {
         city.setId(cityOptional.get().getId());
         return new ResponseEntity<>(cityService.save(city), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<City> delete(@PathVariable Long id) {
+        Optional<City> cityOptional = cityService.findById(id);
+        if (!cityOptional.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        cityService.remove(id);
+        return new ResponseEntity<>(cityOptional.get(), HttpStatus.NO_CONTENT);
+    }
 }
