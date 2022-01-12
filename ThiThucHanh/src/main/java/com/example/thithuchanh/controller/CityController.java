@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
@@ -28,5 +29,24 @@ public class CityController {
     @PostMapping
     public ResponseEntity<City> save(@RequestBody City city) {
         return new ResponseEntity<>(cityService.save(city), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<City> findById(@PathVariable Long id) {
+        Optional<City> cityOptional = cityService.findById(id);
+        if (!cityOptional.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(cityOptional.get(), HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<City> update(@PathVariable Long id, @RequestBody City city) {
+        Optional<City> cityOptional = cityService.findById(id);
+        if (!cityOptional.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        city.setId(cityOptional.get().getId());
+        return new ResponseEntity<>(cityService.save(city), HttpStatus.OK);
     }
 }
