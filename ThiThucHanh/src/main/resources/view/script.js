@@ -68,6 +68,10 @@ function viewCity(id) {
                                         <th>Giới thiệu: </th>
                                         <td>${city.description}</td>
                                     </tr>
+                                    <tr>
+                                        <th></th>
+                                        <td><button onclick="formEditCity(${id})">Chỉnh sửa</button>&ensp;&ensp;<button onclick="removeCity(${id})">Xóa</button></td>
+                                    </tr>
                                 </table>`;
             document.getElementById("main").innerHTML = view;
         }
