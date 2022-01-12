@@ -8,6 +8,7 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+    private String name;
     private Long area;
     private Long population;
     private Long GDP;
@@ -22,7 +23,8 @@ public class City {
     }
 
 
-    public City(Long area, Long population, Long GDP, String description, Country country) {
+    public City(String name, Long area, Long population, Long GDP, String description, Country country) {
+        this.name = name;
         this.area = area;
         this.population = population;
         this.GDP = GDP;
@@ -36,6 +38,14 @@ public class City {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getArea() {

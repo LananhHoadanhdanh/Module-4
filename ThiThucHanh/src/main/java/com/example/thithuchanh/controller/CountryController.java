@@ -25,7 +25,7 @@ public class CountryController {
     }
 
     @PostMapping
-    public ResponseEntity<Country> save(@RequestBody Country category) {
-        return new ResponseEntity<>(countryService.save(category), HttpStatus.CREATED);
+    public ResponseEntity<Country> save(@RequestBody Country country) {
+        return new ResponseEntity<>(countryService.save(country), HttpStatus.CREATED);
     }
 }
