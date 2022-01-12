@@ -119,7 +119,7 @@ function formCreateCity() {
                             </tr>
                             <tr>
                                 <th></th>
-                                <td><button onclick="saveCity()">Thêm mới</button></td>
+                                <td><button onclick="saveCity()">Thêm mới</button>&ensp;&ensp;<button onclick="home()">Trở về</button></td>
                             </tr>
                         </table>`;
             document.getElementById("main").innerHTML = form;
@@ -200,7 +200,7 @@ function formEditCity(id) {
                             </tr>
                             <tr>
                                 <th></th>
-                                <td><button onclick="updateCity(${id})">Cập nhật</button></td>
+                                <td><button onclick="updateCity(${id})">Cập nhật</button>&ensp;&ensp;<button onclick="home()">Trở về</button></td>
                             </tr>
                         </table>`;
                     document.getElementById("main").innerHTML = form;
